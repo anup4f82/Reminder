@@ -3,32 +3,32 @@
 require 'sqlite3'
 
 
-$db = SQLite3::Database.open "dbcanup.db"
+$db = SQLite3::Database.open "lazy.db"
 
-az_reps = []
+friends = []
 
-def print_arizona_reps
-  puts "AZ REPRESENTATIVES"
-  az_reps = $db.execute("SELECT * FROM test123")
-  p az_reps
+def birthday
+
+  friends = $db.execute("SELECT * FROM test123")
+  friends
 
 end
 
 
-print_arizona_reps;
+birthday;
 
 
 # def print_longest_serving_reps(minimum_years)  #sorry guys, oracle needs me, i didn't finish this!
 #   puts "LONGEST SERVING REPRESENTATIVES"
 #   long_reps =  $db.execute("SELECT name FROM congress_members WHERE years_in_congress > #{minimum_years}")
- 
+
 
 #   long_reps.each do |rep|
 
 #      year = $db.execute("SELECT years_in_congress FROM congress_members WHERE name = '#{rep[0]}'")
 
 #      puts "#{rep[0]} - #{year[0][0]}"
-    
+
 #  end
 # end
 
@@ -46,9 +46,9 @@ print_arizona_reps;
 # states.each do |x|
 
 # state_rep = $db.execute("SELECT name from congress_members WHERE location = '#{x}'")
- 
+
 #  puts "#{x} REPRESENTATIVES"
-#  puts 
+#  puts
 #  state_rep.each {|rep| puts "#{rep[0]}"}
 #  puts
 
@@ -56,9 +56,9 @@ print_arizona_reps;
 # 	end
 
 # def print_separator
-#   puts 
+#   puts
 #   puts "------------------------------------------------------------------------------"
-#   puts 
+#   puts
 # end
 
 
